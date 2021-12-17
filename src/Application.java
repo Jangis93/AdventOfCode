@@ -11,7 +11,7 @@ public class Application {
         // 1. Sonar Swap
         System.out.println("Number of increased depths: " + getNumberOfDepthIncreases());
 
-        // 2. 
+        // 2.
 
     }
 
