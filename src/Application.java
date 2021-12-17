@@ -7,6 +7,10 @@ public class Application {
         // Day 1 challenge
         printDay(1);
         Day1.run();
+
+        // Day 2 challenge
+        printDay(2);
+        Day2.run();
     }
 
     private static void printDay(int day) {
