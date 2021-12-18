@@ -1,9 +1,11 @@
+import utilities.utilities;
+
 import java.io.IOException;
 import java.util.List;
 
 public class Day3 {
 
-    private final static String filePath = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\input_day_3";
+    private final static String filePath = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\resources\\input_day_3";
 
 
     public static void run() throws IOException {

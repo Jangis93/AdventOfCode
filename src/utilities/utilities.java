@@ -1,3 +1,5 @@
+package utilities;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.util.List;
 
 public class utilities {
 
-    static List<String> getInputFromFile(String path) throws IOException {
+    public static List<String> getInputFromFile(String path) throws IOException {
         List<String> depths = new ArrayList<>();
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
