@@ -10,13 +10,13 @@ public class Main {
 		List<Day> days = new ArrayList<>();
 		days.add(new Day1());
 		days.add(new Day2());
-		//days.add(new Day3());
+		days.add(new Day3());
 		for(int i = 1; i < days.size(); i++) {
-			System.out.println(String.format("---------- Day %s ----------%n", i));
+			System.out.printf("---------- Day %s ----------%n%n", i);
 			Day day = days.get(i);
-			System.out.println(String.format("--- Day %s - Test run ---", i));
+			System.out.printf("--- Day %s - Test run ---%n", i);
 			day.test();
-			System.out.println(String.format("--- Day %s - Run ---", i));
+			System.out.printf("--- Day %s - Run ---%n", i);
 			day.run();
 		}
 	}
