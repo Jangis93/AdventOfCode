@@ -1,7 +1,10 @@
+package aoc_2021;
+
 import java.io.IOException;
 
 public class Application {
 
+    /*
     public static void main(String[] args) throws IOException {
 
         // Day 1 challenge
@@ -15,7 +18,8 @@ public class Application {
         // Day 2 challenge
         printDay(3);
         Day3.run();
-    }
+    }*/
+
 
     private static void printDay(int day) {
         System.out.println("******************* Day " + day +" ****************");

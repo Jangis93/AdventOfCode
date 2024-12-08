@@ -1,4 +1,4 @@
-package utilities;
+package aoc_2021.utilities;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,6 @@
-import utilities.utilities;
+package aoc_2021;
+
+import aoc_2021.utilities.utilities;
 
 import java.io.IOException;
 import java.util.List;
@@ -60,11 +62,9 @@ public class Day2 {
                     break;
                 case "down":
                     aim+= Integer.parseInt(command[1]);
-                    //depth += Integer.parseInt(command[1]);
                     break;
                 case "up":
                     aim-= Integer.parseInt(command[1]);
-                    // -= Integer.parseInt(command[1]);
                     break;
             }
         }

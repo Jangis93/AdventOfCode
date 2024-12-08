@@ -1,11 +1,13 @@
-import utilities.utilities;
+package aoc_2021;
+
+import aoc_2021.utilities.utilities;
 
 import java.io.IOException;
 import java.util.List;
 
 public class Day1 {
 
-    private final static String filePath = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\resources\\input_day_1";
+    private final static String filePath = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\aoc_2024\\resources\\input_day_1";
 
     public static void run() throws IOException {
         // 1a. Sonar Swap
