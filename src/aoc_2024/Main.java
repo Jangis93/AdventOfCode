@@ -11,12 +11,12 @@ public class Main {
 		days.add(new Day1());
 		days.add(new Day2());
 		days.add(new Day3());
-		for(int i = 1; i < days.size(); i++) {
-			System.out.printf("---------- Day %s ----------%n%n", i);
+		for(int i = 0; i < days.size(); i++) {
+			System.out.printf("---------- Day %s ----------%n%n", i + 1);
 			Day day = days.get(i);
-			System.out.printf("--- Day %s - Test run ---%n", i);
+			System.out.printf("--- Day %s - Test run ---%n", i + 1);
 			day.test();
-			System.out.printf("--- Day %s - Run ---%n", i);
+			System.out.printf("--- Day %s - Run ---%n", i + 1);
 			day.run();
 		}
 	}
