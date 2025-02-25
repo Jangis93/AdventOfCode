@@ -11,8 +11,6 @@ public class Day3 implements Day {
     private final String TEST_INPUT_FILE = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\aoc_2024\\resources\\day3\\test_input.txt";
     private final String INPUT_FILE = "C:\\Users\\micha\\IdeaProjects\\AdventOfCode\\src\\aoc_2024\\resources\\day3\\input.txt";
 
-
-
     @Override
     public void run() {
         try {
@@ -43,7 +41,7 @@ public class Day3 implements Day {
             regex = "mul\\((\\d{1,3}),(\\d{1,3})\\)|don't\\(\\)|do\\(\\)";
         }
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher;// = pattern.matcher(input);
+        Matcher matcher;
 
         int sum = 0;
         int multiplier = 1;
