@@ -13,6 +13,7 @@ public class Main {
 		days.add(new Day3());
 		days.add(new Day4());
 		days.add(new Day5());
+		days.add(new Day6());
 		for(int i = 0; i < days.size(); i++) {
 			System.out.printf("---------- Day %s ----------%n%n", i + 1);
 			Day day = days.get(i);
