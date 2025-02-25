@@ -23,8 +23,10 @@ public class Day5 implements Day {
             System.out.println("Failed to process input file: " + INPUT_FILE + " with error: " + e);
         }
 
-        int resultV1 = sumUpdates();
+        int resultV1 = sumUpdates(true);
         System.out.println("Day5 - Part 1 Count of middle pages: " + resultV1);
+        int resultV2 = sumUpdates(false);
+        System.out.println("Day5 - Part 2 Count of middle pages: " + resultV2);
     }
 
     @Override
@@ -35,8 +37,10 @@ public class Day5 implements Day {
             System.out.println("Failed to process input file: " + TEST_INPUT_FILE + " with error: " + e);
         }
 
-        int resultV1 = sumUpdates();
+        int resultV1 = sumUpdates(true);
         System.out.println("Day5 - Part 1 Count of middle pages: " + resultV1);
+        int resultV2 = sumUpdates(false);
+        System.out.println("Day5 - Part 2 Count of middle pages: " + resultV2);
     }
 
     private void parseInput(String file) throws IOException {
@@ -70,11 +74,18 @@ public class Day5 implements Day {
         */
     }
 
-    private int sumUpdates() {
+    private int sumUpdates(boolean partOne) {
         int sum = 0;
         for(List<Integer> update: this.updates) {
-            if(isValidUpdate(update)) {
-                sum += update.get(update.size() / 2);
+            if(partOne) {
+                if(isValidUpdate(update)) {
+                    sum += update.get(update.size() / 2);
+                }
+            } else {
+                update = validateAndCorrect(update);
+                if(!update.isEmpty()) {
+                    sum += update.get(update.size() / 2);
+                }
             }
         }
         return sum;
@@ -94,5 +105,36 @@ public class Day5 implements Day {
             processed.add(updateRow.get(i));
         }
         return true;
+    }
+
+    private List<Integer> validateAndCorrect(List<Integer> updateRow) {
+        List<Integer> processed = new ArrayList<>();
+        processed.add(updateRow.get(0));
+        boolean nonValidFound = false;
+        for(int i = 1; i < updateRow.size(); i++) {
+
+            int current = updateRow.get(i);
+            List<Integer> rulesList = this.rules.get(current);  // Get dependency rules for current element
+
+            if (rulesList == null || rulesList.isEmpty()) {
+                // No dependencies, just add at the end
+                processed.add(current);
+            }else {
+                // Find the correct position in 'processed'
+                int insertIndex = processed.size();
+
+                for (int j = 0; j < processed.size(); j++) {
+                    if (rulesList.contains(processed.get(j))) {
+                        nonValidFound = true;
+                        break;
+                    }
+                }
+                processed.add(insertIndex, current);
+            }
+        }
+        if(nonValidFound) {
+            return processed;
+        }
+        return Collections.emptyList();
     }
 }
